@@ -54,7 +54,20 @@ order, and never inventing statistics to satisfy an evidence check.
 }
 ```
 
+### Claude Code and other agents
+
+The skill also works outside OpenClaw: it falls back to the CLI below. Copy `skills/geo-score` into your agent's
+skills folder (for Claude Code, `~/.claude/skills/geo-score`).
+
 ## CLI
+
+Run it without cloning:
+
+```bash
+npx -y https://github.com/MarkTechAI/openclaw-geo-score/archive/refs/tags/v0.1.0.tar.gz https://example.com/blog/post
+```
+
+Or from a clone:
 
 ```bash
 node dist/cli.js https://example.com/blog/post
