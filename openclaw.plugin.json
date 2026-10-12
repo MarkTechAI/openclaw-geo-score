@@ -1,0 +1,52 @@
+{
+  "id": "geo-score",
+  "name": "GEO Score",
+  "description": "Scores how ready a web page or a draft is to be retrieved and cited by AI answer engines (ChatGPT, Perplexity, Google AI Overviews), with ranked fixes.",
+  "version": "0.1.0",
+  "categories": [
+    "sales-marketing",
+    "research"
+  ],
+  "skills": [
+    "skills/geo-score"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "userAgent": {
+        "type": "string",
+        "description": "User-Agent for page fetches."
+      },
+      "timeoutMs": {
+        "type": "number",
+        "minimum": 1000,
+        "maximum": 60000,
+        "description": "Fetch timeout in ms (default 15000)."
+      },
+      "checkRobotsTxt": {
+        "type": "boolean",
+        "description": "Check robots.txt for AI retrieval bots (default true)."
+      }
+    }
+  },
+  "uiHints": {
+    "userAgent": {
+      "label": "User-Agent"
+    },
+    "timeoutMs": {
+      "label": "Fetch timeout (ms)"
+    },
+    "checkRobotsTxt": {
+      "label": "Check robots.txt"
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "geo_score_url",
+      "geo_score_text"
+    ]
+  }
+}
